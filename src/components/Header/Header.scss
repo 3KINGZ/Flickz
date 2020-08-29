@@ -1,0 +1,12 @@
+@import "../../config";
+
+.header {
+  color: $secondary_text_color;
+  font: $header-font;
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    text-align: center;
+  }
+}

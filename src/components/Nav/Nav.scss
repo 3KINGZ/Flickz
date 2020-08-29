@@ -1,0 +1,33 @@
+@import "../../config";
+
+.Nav {
+  margin-top: 1%;
+  display: flex;
+  border-top: 1px solid $primary-text-color;
+  border-bottom: 1px solid $primary-text-color;
+  color: $primary-text-color;
+  padding: 3px 0;
+  cursor: pointer;
+  width: 100%;
+}
+
+.active {
+  color: $secondary-text-color;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link {
+  margin-right: 10px;
+  margin: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .Nav {
+    width: 100%;
+  }
+}

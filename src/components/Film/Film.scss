@@ -1,0 +1,33 @@
+@import "../../config";
+
+.film {
+  color: $primary_text_color;
+  font-weight: bold;
+  width: 185px;
+  margin: 5px auto;
+  //   white-space: nowrap;
+  .film-details {
+    margin-top: 3px;
+  }
+  img {
+    border-radius: 10px;
+  }
+  .title-rating {
+    // margin-top: 1.5px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .broken {
+    width: 185px;
+    height: 280px;
+    margin-top: 1.2px;
+  }
+  .genre {
+    // display: grid;
+    width: 80%;
+    // grid-template-columns: auto auto;
+    align-content: start;
+    font-weight: lighter;
+    color: #a2a3a4;
+  }
+}

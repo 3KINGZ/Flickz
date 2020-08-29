@@ -1,0 +1,16 @@
+@import "config";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: $primary_text_color;
+  background-color: $background_color;
+  font-family: sans-serif;
+  padding: 5px 20px;
+  //   overflow-x: hidden;
+  //   overflow-y: scroll;
+}
