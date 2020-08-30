@@ -5,7 +5,9 @@ import "./Header.scss";
 function Header() {
   return (
     <div className="header-container">
-      <h1 className="header">Flickz</h1>
+      <h1 className="header" id="top">
+        Flickz
+      </h1>
       <Nav />
     </div>
   );

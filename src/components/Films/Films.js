@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Film from "../../components/Film/Film";
+import loading from "../../assets/Spin-1s-200px.svg";
+import up from "../../assets/up-chevron.svg";
+import "./Films.scss";
 
 function NowShowing({ type }) {
   const [data, setData] = useState([]);
@@ -47,11 +50,15 @@ function NowShowing({ type }) {
   );
 
   return (
-    <div className="route-header">
-      <h2>{type}</h2>
+    <div className="holder">
+      <div className="route-header">
+        <h2>{type}</h2>
+      </div>
       <div className="movies-container">
         {loading ? (
-          <h3>Loading...</h3>
+          <>
+            <img src={loading} alt="go up" />
+          </>
         ) : error ? (
           <h2>oops</h2>
         ) : (
@@ -64,6 +71,11 @@ function NowShowing({ type }) {
           </div>
         )}
       </div>
+      <a href="#top">
+        <div className="up">
+          <img src={up} alt="go up" />
+        </div>
+      </a>
     </div>
   );
 }
