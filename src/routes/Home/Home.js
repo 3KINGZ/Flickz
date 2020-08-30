@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Film from "../../components/Film/Film";
+import Loading from "../../components/Loading/Loading";
 import "./Home.scss";
 
 function Home() {
@@ -38,7 +39,7 @@ function Home() {
       </div>
       <div className="movies-container">
         {loading ? (
-          <h3>Loading...</h3>
+          <Loading />
         ) : error ? (
           <h2>oops</h2>
         ) : (

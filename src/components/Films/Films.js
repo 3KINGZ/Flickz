@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Film from "../../components/Film/Film";
-import loading from "../../assets/Spin-1s-200px.svg";
-import up from "../../assets/up-chevron.svg";
+import Loading from "../Loading/Loading";
+import Up from "../../components/UpNav/Up";
 import "./Films.scss";
 
 function NowShowing({ type }) {
@@ -56,9 +56,7 @@ function NowShowing({ type }) {
       </div>
       <div className="movies-container">
         {loading ? (
-          <>
-            <img src={loading} alt="go up" />
-          </>
+          <Loading />
         ) : error ? (
           <h2>oops</h2>
         ) : (
@@ -72,9 +70,7 @@ function NowShowing({ type }) {
         )}
       </div>
       <a href="#top">
-        <div className="up">
-          <img src={up} alt="go up" />
-        </div>
+        <Up />
       </a>
     </div>
   );
