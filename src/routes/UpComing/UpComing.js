@@ -1,11 +1,8 @@
 import React from "react";
+import Films from "../../components/Films/Films";
 
-function UpComing() {
-  return (
-    <div>
-      <h2>Up Coming</h2>
-    </div>
-  );
-}
+const UpComing = () => {
+  return <Films type="Upcoming" />;
+};
 
 export default UpComing;

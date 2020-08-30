@@ -1,2 +1,40 @@
-.action {
+@import "../../config";
+
+.moviez {
+  margin-top: 2%;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+  div {
+    margin-right: 2%;
+    img {
+      border-radius: 5px;
+    }
+  }
+  .genres {
+    margin-top: 1.8%;
+    display: flex;
+  }
+  .genre {
+    padding: 3px;
+    border-radius: 6px;
+    background-color: rgb(209, 52, 52);
+    color: $primary-text-color;
+  }
+  .trailer {
+    margin-top: 2%;
+  }
+  .overview {
+    margin-top: 3%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .moviez {
+    display: flex;
+    flex-direction: column;
+    div {
+      margin: auto;
+    }
+  }
 }

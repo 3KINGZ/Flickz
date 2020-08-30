@@ -6,6 +6,7 @@ import Popular from "./routes/Popular/Popular";
 import TopRated from "./routes/TopRated/TopRated";
 import NowShowing from "./routes/NowShowing/NowShowing";
 import UpComing from "./routes/UpComing/UpComing";
+import MovieDetails from "./routes/MovieDetails.js/MovieDetails";
 import "./App.scss";
 
 function App() {
@@ -14,10 +15,11 @@ function App() {
       <Header />
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/popular" component={Popular} />
-        <Route path="/top-rated" component={TopRated} />
-        <Route path="/now-showing" component={NowShowing} />
-        <Route path="/up-coming" component={UpComing} />
+        <Route path="/popular" exact component={Popular} />
+        <Route path="/top-rated" exact component={TopRated} />
+        <Route path="/now-showing" exact component={NowShowing} />
+        <Route path="/up-coming" exact component={UpComing} />
+        <Route path="/movie/:id" component={MovieDetails} />
       </Switch>
     </Router>
   );

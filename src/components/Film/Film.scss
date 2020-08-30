@@ -5,7 +5,14 @@
   font-weight: bold;
   width: 185px;
   margin: 5px auto;
+  transition-duration: 0.9s;
+  transition-property: transform;
+  transform: translateZ(0);
+  // -moz-osx-font-smoothing: grayscale;
   //   white-space: nowrap;
+  :hover {
+    transform: scale(1.1);
+  }
   .film-details {
     margin-top: 3px;
   }
@@ -29,5 +36,13 @@
     align-content: start;
     font-weight: lighter;
     color: #a2a3a4;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .film {
+    :hover {
+      transform: scale(1);
+    }
   }
 }

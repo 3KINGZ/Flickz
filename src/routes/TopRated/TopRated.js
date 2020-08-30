@@ -1,11 +1,8 @@
 import React from "react";
+import Films from "../../components/Films/Films";
 
-function TopRated() {
-  return (
-    <div>
-      <h2>Top Rated</h2>
-    </div>
-  );
-}
+const TopRated = () => {
+  return <Films type="Top Rated" />;
+};
 
 export default TopRated;

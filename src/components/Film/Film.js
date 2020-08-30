@@ -1,5 +1,5 @@
 import React from "react";
-import genres from "../../genredata";
+import genres from "../../genre-data";
 import broken from "../../assets/broken.svg";
 import "./Film.scss";
 
@@ -8,7 +8,7 @@ function Film({ data }) {
     <div className="film">
       {data.poster_path ? (
         <img
-          src={`http://image.tmdb.org/t/p/w185/${data.poster_path}`}
+          src={`https://image.tmdb.org/t/p/w185/${data.poster_path}`}
           alt={`${data.original_title} poster`}
         />
       ) : (
@@ -17,7 +17,7 @@ function Film({ data }) {
 
       <div className="film-details">
         <div className="title-rating">
-          <div>{data.original_title}</div>
+          <div className="film-title">{data.original_title}</div>
           <div>{data.vote_average}</div>
         </div>
         <div className="genre">

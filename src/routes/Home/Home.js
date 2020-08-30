@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Film from "../../components/Film/Film";
 import "./Home.scss";
@@ -44,8 +44,8 @@ function Home() {
         ) : (
           <div className="movie-container">
             {data.map((movie) => (
-              <Link>
-                <Film data={movie} />
+              <Link to={`/movie/${movie.id}`}>
+                <Film data={movie} key={movie.id} />
               </Link>
             ))}
           </div>
