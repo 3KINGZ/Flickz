@@ -51,6 +51,7 @@ function MovieDetails({ match }) {
               <h2>{data.original_title}</h2>
             </div>
             <div className="overview">{data.overview}</div>
+            <div className="vote-average">{data.vote_average}</div>
             <div className="genres">
               {data.genres.map((genre) => (
                 <div key={genre.id} className="genre">
