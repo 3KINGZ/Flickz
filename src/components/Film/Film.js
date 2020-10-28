@@ -1,5 +1,5 @@
 import React from "react";
-import genres from "../../genre-data";
+import genres from "../../assets/data/genre-data";
 import broken from "../../assets/broken.svg";
 import "./Film.scss";
 
@@ -21,8 +21,8 @@ function Film({ data }) {
           <div>{data.vote_average}</div>
         </div>
         <div className="genre">
-          {data.genre_ids.map((g_id) => (
-            <span>{genres[`_${g_id}`]} </span>
+          {data.genre_ids.map((g_id, index) => (
+            <span key={index}>{genres[`_${g_id}`]} </span>
           ))}
         </div>
       </div>

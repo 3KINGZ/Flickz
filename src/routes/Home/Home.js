@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { searchMovies } from "../../services/services";
 import { Link } from "react-router-dom";
 import Film from "../../components/Film/Film";
 import Loading from "../../components/Loading/Loading";
@@ -12,16 +13,15 @@ function Home() {
 
   function SearchMovie() {
     setLoading(true);
-    fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=52050e6e3220743e0fba6b8a62e6eccf&language=en-US&page=1&query=${search}&include_adult=false`
-    )
-      .then((res) => res.json())
-      .then((json) => {
-        setData(json.results);
+    searchMovies(search)
+      .then((data) => {
+        setData(data.results);
         setLoading(false);
       })
-      .catch((error) => {
-        setError("...oops an error occured while loading page");
+      .catch((e) => {
+        setError(
+          "...Oops an error occured while trying to search through the database"
+        );
         setLoading(false);
       });
   }
@@ -41,7 +41,9 @@ function Home() {
         {loading ? (
           <Loading />
         ) : error ? (
-          <h2>oops</h2>
+          <div className="loading-error-container">
+            <h2>{error}</h2>
+          </div>
         ) : (
           <div className="movie-container">
             {data.map((movie) => (

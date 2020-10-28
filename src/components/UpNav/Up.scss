@@ -1,4 +1,4 @@
-@import "../../config";
+@import "../../assets/styles/config";
 
 .up {
   position: -webkit-sticky; /* Safari */
@@ -12,4 +12,8 @@
   border-radius: 50%;
   margin: 0;
   align-self: flex-end;
+}
+
+.hidden {
+  display: none;
 }

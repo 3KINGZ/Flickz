@@ -2,9 +2,9 @@ import React from "react";
 import up from "../../assets/up-chevron.svg";
 import "./Up.scss";
 
-function Up() {
+function Up({ data }) {
   return (
-    <div className="up">
+    <div className={data ? "up" : "hidden"}>
       <img src={up} alt="go up" />
     </div>
   );

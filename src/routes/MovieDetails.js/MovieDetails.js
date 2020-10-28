@@ -1,29 +1,23 @@
 import React, { useState, useEffect } from "react";
+import { getMovieDetails } from "../../services/services";
 import "./MovieDetails.scss";
 
 function MovieDetails({ match }) {
   const [data, setData] = useState({ genres: [] });
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  useEffect(
-    () => {
-      fetch(
-        `https://api.themoviedb.org/3/movie/${match.params.id}?api_key=52050e6e3220743e0fba6b8a62e6eccf`
-      )
-        .then((res) => res.json())
-        .then((json) => {
-          setData(json);
-          setLoading(false);
-        })
-        .catch((error) => {
-          setError("...oops an error occured while loading page");
-          setLoading(false);
-        });
-    },
-    // eslint-disable-next-line
-    []
-  );
+  useEffect(() => {
+    getMovieDetails(match.params.id)
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+      })
+      .catch((e) => {
+        setError("...Oops an error occured while fetching movie details");
+        setLoading(false);
+      });
+  });
 
   return (
     <div>
@@ -60,7 +54,10 @@ function MovieDetails({ match }) {
               ))}
             </div>
             <div className="trailer">
-              <iFrame src="https://www.youtube.com/embed/tgbNymZ7vqY"></iFrame>
+              <iframe
+                title="trailer"
+                src="https://www.youtube.com/embed/tgbNymZ7vqY"
+              ></iframe>
             </div>
           </div>
         </div>

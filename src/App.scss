@@ -1,4 +1,4 @@
-@import "config";
+@import "./assets/styles/config";
 
 * {
   margin: 0;
@@ -23,4 +23,9 @@ body {
   margin-top: 2%;
   color: white;
   width: 100%;
+}
+
+.loading-error-container {
+  margin-top: 100px;
+  text-align: center;
 }

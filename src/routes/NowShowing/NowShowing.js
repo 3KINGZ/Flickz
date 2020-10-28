@@ -2,7 +2,7 @@ import React from "react";
 import Films from "../../components/Films/Films";
 
 function NowShowing() {
-  return <Films type="Now Showing" />;
+  return <Films type="now_playing" />;
 }
 
 export default NowShowing;
