@@ -13,7 +13,7 @@ function Home() {
 
   function SearchMovie() {
     setLoading(true);
-    searchMovies(search)
+    searchMovies(search.toLowerCase())
       .then((data) => {
         setData(data.results);
         setLoading(false);
@@ -33,7 +33,7 @@ function Home() {
           type="text"
           placeholder="Search"
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) => setSearch(e.target.value.toUpperCase())}
           onKeyPress={(event) => (event.key === "Enter" ? SearchMovie() : null)}
         />
       </div>
