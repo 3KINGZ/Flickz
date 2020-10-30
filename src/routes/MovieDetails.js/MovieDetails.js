@@ -22,7 +22,9 @@ function MovieDetails({ match }) {
   return (
     <div>
       {loading ? (
-        <h1>loading...</h1>
+        <div className="loading-error-container">
+          <h2>loading...</h2>
+        </div>
       ) : error ? (
         <h1>error...</h1>
       ) : (
