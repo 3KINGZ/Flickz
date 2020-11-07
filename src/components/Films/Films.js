@@ -6,7 +6,7 @@ import Loading from "../Loading/Loading";
 import Up from "../../components/UpNav/Up";
 import "./Films.scss";
 
-function NowShowing({ type }) {
+function Films({ type }) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -19,7 +19,7 @@ function NowShowing({ type }) {
           setLoading(false);
         })
         .catch((e) => {
-          setError("...Oops an error occured while loading page");
+          setError("...Oops an error occured while fetching data");
           setLoading(false);
         });
     },
@@ -56,4 +56,4 @@ function NowShowing({ type }) {
   );
 }
 
-export default NowShowing;
+export default Films;
