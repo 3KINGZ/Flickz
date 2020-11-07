@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getMovieDetails } from "../../services/services";
+import Loading from "../../components/Loading/Loading";
 import "./MovieDetails.scss";
 
 function MovieDetails({ match }) {
@@ -22,9 +23,7 @@ function MovieDetails({ match }) {
   return (
     <div>
       {loading ? (
-        <div className="loading-error-container">
-          <h2>loading...</h2>
-        </div>
+        <Loading />
       ) : error ? (
         <h1>error...</h1>
       ) : (

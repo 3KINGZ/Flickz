@@ -7,11 +7,11 @@
   margin: 5px auto;
   transition-duration: 0.9s;
   transition-property: transform;
-  transform: translateZ(0);
-  // -moz-osx-font-smoothing: grayscale;
-  //   white-space: nowrap;
-  :hover {
+  &:hover {
     transform: scale(1.1);
+  }
+  .img-poster {
+    width: 100%;
   }
   .film-details {
     margin-top: 3px;
@@ -20,9 +20,14 @@
     border-radius: 10px;
   }
   .title-rating {
-    // margin-top: 1.5px;
     display: flex;
     justify-content: space-between;
+    .film-title {
+      white-space: nowrap;
+      width: 70%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
   .broken {
     width: 185px;
@@ -30,9 +35,7 @@
     margin-top: 1.2px;
   }
   .genre {
-    // display: grid;
     width: 80%;
-    // grid-template-columns: auto auto;
     align-content: start;
     font-weight: lighter;
     color: #a2a3a4;
@@ -41,8 +44,10 @@
 
 @media only screen and (max-width: 600px) {
   .film {
-    :hover {
-      transform: scale(1);
+    width: 100%;
+    margin: 10px auto;
+    &:hover {
+      transform: scale(1.1);
     }
   }
 }

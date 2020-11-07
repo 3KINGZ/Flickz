@@ -10,6 +10,7 @@ function Film({ data }) {
         <img
           src={`https://image.tmdb.org/t/p/w185/${data.poster_path}`}
           alt={`${data.original_title} poster`}
+          className="img-poster"
         />
       ) : (
         <img src={broken} alt="no-poster" className="broken" />
