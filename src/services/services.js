@@ -14,18 +14,18 @@ export async function searchMovies(keyword) {
   let response = await fetch(
     `${searchURL}?api_key=${apiKey}${other}&query=${keyword}&include_adult=false`
   );
-  let data = await response.json();
-  return data;
+  response = await response.json();
+  return response;
 }
 
 export async function request(type) {
   let response = await fetch(getURLs[type]);
-  let data = await response.json();
-  return data;
+  response = await response.json();
+  return response;
 }
 
 export async function getMovieDetails(id) {
   let response = await fetch(`${baseURL}${id}?api_key=${apiKey}`);
-  let data = await response.json();
-  return data;
+  response = await response.json();
+  return response;
 }

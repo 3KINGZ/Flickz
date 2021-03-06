@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { filterString } from "../../utils/filterStrings";
+
 import { request } from "../../services/services";
 import Film from "../../components/Film/Film";
 import Loading from "../Loading/Loading";
@@ -8,14 +9,16 @@ import "./Films.scss";
 
 function Films({ type }) {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
   useEffect(
     () => {
+      setLoading(false);
       request(type)
         .then((data) => {
           setData(data.results);
+          setError("");
           setLoading(false);
         })
         .catch((e) => {
@@ -30,7 +33,7 @@ function Films({ type }) {
   return (
     <div className="holder">
       <div className="route-header">
-        <h2>{type}</h2>
+        <h2>{filterString(type)}</h2>
       </div>
       <div className="movies-container">
         {loading ? (
@@ -42,9 +45,7 @@ function Films({ type }) {
         ) : (
           <div className="movie-container">
             {data.map((movie) => (
-              <Link to={`/movie/${movie.id}`} key={movie.id}>
-                <Film data={movie} />
-              </Link>
+              <Film data={movie} key={movie.id} />
             ))}
           </div>
         )}

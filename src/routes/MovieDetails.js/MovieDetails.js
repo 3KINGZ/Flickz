@@ -5,20 +5,26 @@ import "./MovieDetails.scss";
 
 function MovieDetails({ match }) {
   const [data, setData] = useState({ genres: [] });
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  useEffect(() => {
-    getMovieDetails(match.params.id)
-      .then((data) => {
-        setData(data);
-        setLoading(false);
-      })
-      .catch((e) => {
-        setError("...Oops an error occured while fetching movie details");
-        setLoading(false);
-      });
-  });
+  useEffect(
+    () => {
+      setLoading(true);
+      getMovieDetails(match.params.id)
+        .then((data) => {
+          setData(data);
+          setError("");
+          setLoading(false);
+        })
+        .catch((e) => {
+          setError("...Oops an error occured while fetching movie details");
+          setLoading(false);
+        });
+    },
+    //eslint-disable-next-line
+    []
+  );
 
   return (
     <div>
